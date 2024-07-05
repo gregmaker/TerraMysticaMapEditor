@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+   <style>
+      body {
+         height : 100%;
+         width : 100%;
+      }
+      canvas { 
+         background-color: #FFFFFF;
+         border: 1px solid #d3d3d3;
+         display: block;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         width: 100%;
+         max-width: 900px;
+         max-height: 80%;
+      }
+   </style>
+<body>
+    <head>
+        <title>Map Generator</title>
+    </head>
+    <body>
+        <canvas id="mapCanvas">
+        Your browser does not support the HTML canvas tag.</canvas>
+        <!-- Box for what last selected hex is set to -->
+        <p id="hexLabel">Selected Hex Type: Unspecified Land</p>
+        <!-- Button for resetting all land to unspecified -->
+        <button id="resetLand">Reset Land</button>
+        <!-- Button for resetting all land to unspecified -->
+        <button id="resetAll">Reset All</button>
+        <!-- Button for random assignment of land -->
+        <button id="runLand">Randomize Land</button>
+        <!-- Button for random assigment of land -->
+        <button id="runWater">Randomize Water</button>
+        <!-- Button for opening a map file -->
+        <input type="file" id="file-input" />
+        <!-- Button for saving a map file -->
+        <input type="txt" id="filename" value="map.txt">
+        <button id="saveButton">Save</button> <br /> <br />
+        <button id="hexStrength">Display Strength</button>
+        <label for="hexType">Hex Type for Shift-Click:</label>
+        <select name="hexType" id ="hexType">
+            <!-- Options must be order of idx in js -->
+            <option value="plain">Plain</option>
+            <option value="plain">Swamp</option>
+            <option value="lake">Lake</option>
+            <option value="forest">Forest</option>
+            <option value="mountain">Mountain</option>
+            <option value="wasteland">Wasteland</option>
+            <option value="desert">Desert</option>
+            <option value="Land">Land</option>
+            <option value="Water">Water</option>
+        </select>
+        <button id="rebalance">Rebalance</button>
+        <!-- Scripts -->
+        <script src="./scripts/constants.js"></script>
+        <script src="./scripts/hex-map.js"></script>
+        <script src="./scripts/game-board.js"></script>
+        <script src="./scripts/board-state.js"></script>
+        <script src="./scripts/land-randomizer.js"></script>
+        <script src="./scripts/water-randomizer.js"></script>
+        <script src="./scripts/djikstra.js"></script>
+        <script src="./scripts/bga-file.js"></script>
+        <script src="./scripts/main.js"></script>
+    </body>
+</html>
